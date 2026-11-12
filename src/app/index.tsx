@@ -19,7 +19,7 @@ export default function InicioScreen() {
           <View style={styles.avatarContainer}>
             <Ionicons name="code-slash" size={44} color="#13436B" />
           </View>
-          <Text style={styles.heroName}>Angel Gaviria</Text>
+          <Text style={styles.heroName}>Angela Sofia Gaviria Colorado</Text>
           <View style={styles.roleBadge}>
             <Text style={styles.roleText}>Desarrollador de Software en Formación</Text>
           </View>
@@ -46,9 +46,9 @@ export default function InicioScreen() {
             <Text style={styles.sectionTitle}>Habilidades y Tecnologías</Text>
           </View>
           <View style={styles.skillsContainer}>
-            <View style={styles.skillChip}><Text style={styles.skillText}>React Native</Text></View>
-            <View style={styles.skillChip}><Text style={styles.skillText}>TypeScript</Text></View>
-            <View style={styles.skillChip}><Text style={styles.skillText}>Expo</Text></View>
+            <View style={styles.skillChip}><Text style={styles.skillText}>Documentación</Text></View>
+            <View style={styles.skillChip}><Text style={styles.skillText}>Pruebas de software</Text></View>
+            <View style={styles.skillChip}><Text style={styles.skillText}>Python</Text></View>
             <View style={styles.skillChip}><Text style={styles.skillText}>Git & GitHub</Text></View>
             <View style={styles.skillChip}><Text style={styles.skillText}>Trabajo en equipo</Text></View>
           </View>
@@ -69,7 +69,7 @@ export default function InicioScreen() {
         <View style={styles.botonesContainer}>
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi correo electrónico', 'Mi correo electrónico:\nangel.gaviria@ejemplo.com')}
+            onPress={() => mostrarAlerta('Mi correo electrónico', 'Mi correo electrónico:\n angelagaviria.sena22@gmail.com')}
           >
             <Ionicons name="mail-outline" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi correo electrónico</Text>
@@ -77,7 +77,7 @@ export default function InicioScreen() {
 
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi número de celular', 'Mi número de celular:\n+57 300 123 4567')}
+            onPress={() => mostrarAlerta('Mi número de celular', 'Mi número de celular:\n+57 312 791 9437')}
           >
             <Ionicons name="call-outline" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi número de celular</Text>

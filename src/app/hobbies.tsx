@@ -3,8 +3,8 @@ import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-nat
 export default function HobbiesScreen() {
   const hobbies = [
     { nombre: 'Videojuegos', resumen: 'Juegos de estrategia y aventura', detalle: 'Me gusta jugar en equipo los fines de semana para desarrollar pensamiento estratégico.' },
-    { nombre: 'Programación', resumen: 'Crear apps móviles', detalle: 'Disfruto aprender nuevas tecnologías como React Native y TypeScript.' },
-    { nombre: 'Música', resumen: 'Escuchar rock y electrónica', detalle: 'Me ayuda a concentrarme mientras escribo código.' },
+    { nombre: 'Jugar futbol', resumen: 'Jugar fútbol en la sintetica', detalle: 'Me ayuda a mantenerme en forma y a socializar con mis amigos y familia' },
+    { nombre: 'Música', resumen: 'Escuchar rap y musica de diferentes generos ', detalle: 'Me ayuda a concentrarme, relajarme y a estar feliz .' },
   ];
 
   return (

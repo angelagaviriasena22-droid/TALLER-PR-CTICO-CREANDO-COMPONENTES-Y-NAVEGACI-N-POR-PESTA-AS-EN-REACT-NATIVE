@@ -15,14 +15,14 @@ export default function EstudiosScreen() {
 
       <TarjetaEstudio
         titulo="Bachiller Académico"
-        institucion="Institución Educativa Distrital"
-        anio="2023"
+        institucion="Colegio Ofelia Uribe de Acosta"
+        anio="2025"
       />
 
       <TarjetaEstudio
-        titulo="Curso de Fundamentos de Programación"
-        institucion="Platzi / SENA"
-        anio="2024"
+        titulo="Tecnico en programación de software"
+        institucion="SENA"
+        anio="2025"
       />
     </ScrollView>
   );

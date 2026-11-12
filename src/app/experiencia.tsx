@@ -2,8 +2,8 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function ExperienciaScreen() {
   const experiencias = [
-    { cargo: 'Desarrollador Frontend Junior (Proyecto)', empresa: 'Proyecto SENA', periodo: '2026', desc: 'Desarrollo de app móvil de hoja de vida en React Native y Expo.' },
-    { cargo: 'Soporte Técnico', empresa: 'Prácticas Académicas', periodo: '2024', desc: 'Mantenimiento preventivo y soporte a usuarios.' },
+    { cargo: 'Desarrollador Junior', empresa: 'Proyecto SENA', periodo: '2026', desc: 'Desarrollo de sistema de gestion de reservas en los pueblos de colombia ' },
+    { cargo: 'Soporte Técnico', empresa: 'Proyecto técnico', periodo: '2025', desc: 'Sistema de gestión de votaciones estudiantiles.' },
   ];
 
   return (
