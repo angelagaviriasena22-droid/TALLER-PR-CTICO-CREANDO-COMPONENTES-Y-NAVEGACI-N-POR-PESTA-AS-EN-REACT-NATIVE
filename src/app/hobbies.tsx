@@ -6,18 +6,21 @@ export default function HobbiesScreen() {
   const hobbies = [
     { 
       nombre: 'Videojuegos', 
+      icono: 'game-controller-outline' as const,
       resumen: 'Juegos de estrategia y aventura', 
       detalle: 'Me gusta jugar en equipo los fines de semana para desarrollar pensamiento estratégico.' 
     },
     { 
       nombre: 'Jugar futbol', 
+      icono: 'football-outline' as const,
       resumen: 'Jugar fútbol en la sintetica', 
       detalle: 'Me ayuda a mantenerme en forma y a socializar con mis amigos y familia' 
     },
     { 
       nombre: 'Música', 
-      resumen: 'Escuchar rap y musica de diferentes generos ', 
-      detalle: 'Me ayuda a concentrarme, relajarme y a estar feliz .' 
+      icono: 'headset-outline' as const,
+      resumen: 'Escuchar rap y musica de diferentes generos', 
+      detalle: 'Me ayuda a concentrarme, relajarme y a estar feliz.' 
     },
   ];
 
@@ -39,9 +42,13 @@ export default function HobbiesScreen() {
           <TouchableOpacity
             key={index}
             style={styles.card}
+            activeOpacity={0.7}
             onPress={() => Alert.alert(hobby.nombre, hobby.detalle)}
           >
-            <Text style={styles.titulo}>{hobby.nombre}</Text>
+            <View style={styles.cardTitleRow}>
+              <Ionicons name={hobby.icono} size={22} color="#E11D48" />
+              <Text style={styles.titulo}>{hobby.nombre}</Text>
+            </View>
             <Text style={styles.resumen}>{hobby.resumen}</Text>
             <Text style={styles.hint}>Toca para ver más detalles</Text>
           </TouchableOpacity>
@@ -102,6 +109,11 @@ const styles = StyleSheet.create({
     elevation: 2,
     borderLeftWidth: 4,
     borderLeftColor: '#E11D48',
+  },
+  cardTitleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
   titulo: {
     fontSize: 18,
