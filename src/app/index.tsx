@@ -1,11 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function InicioScreen() {
-  const mostrarAlerta = (titulo: string, mensaje: string) => {
+  const mostrarAlerta = (titulo: string, mensaje: string, url?: string) => {
     Alert.alert(titulo, mensaje, [
-      { text: 'Copiar', onPress: () => {} },
+      ...(url ? [{ text: 'Abrir enlace', onPress: () => Linking.openURL(url) }] : []),
       { text: 'Cerrar', style: 'cancel' },
     ]);
   };
@@ -65,11 +65,12 @@ export default function InicioScreen() {
           <Text style={styles.infoText}><Text style={styles.bold}>Idiomas:</Text> Español (Nativo), Inglés (Básico)</Text>
         </View>
 
-        {/* Botones de contacto */}
+        {/* Botones de contacto con Linking */}
         <View style={styles.botonesContainer}>
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi correo electrónico', 'Mi correo electrónico:\n angelagaviria.sena22@gmail.com')}
+            activeOpacity={0.7}
+            onPress={() => mostrarAlerta('Mi correo electrónico', 'angelagaviria.sena22@gmail.com', 'mailto:angelagaviria.sena22@gmail.com')}
           >
             <Ionicons name="mail-outline" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi correo electrónico</Text>
@@ -77,7 +78,8 @@ export default function InicioScreen() {
 
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi número de celular', 'Mi número de celular:\n+57 312 791 9437')}
+            activeOpacity={0.7}
+            onPress={() => mostrarAlerta('Mi número de celular', '+57 312 791 9437', 'tel:+573127919437')}
           >
             <Ionicons name="call-outline" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi número de celular</Text>
@@ -85,7 +87,8 @@ export default function InicioScreen() {
 
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi GitHub', 'Mi repositorio:\ngithub.com/angelgaviriasena22-droid')}
+            activeOpacity={0.7}
+            onPress={() => mostrarAlerta('Mi GitHub', 'github.com/angelgaviriasena22-droid', 'https://github.com/angelgaviriasena22-droid')}
           >
             <Ionicons name="logo-github" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi GitHub</Text>
@@ -93,7 +96,8 @@ export default function InicioScreen() {
 
           <TouchableOpacity
             style={styles.boton}
-            onPress={() => mostrarAlerta('Mi Facebook', 'Mi perfil:\nfacebook.com/angel.gaviria')}
+            activeOpacity={0.7}
+            onPress={() => mostrarAlerta('Mi Facebook', 'facebook.com/angel.gaviria', 'https://facebook.com')}
           >
             <Ionicons name="logo-facebook" size={20} color="#FFFFFF" />
             <Text style={styles.botonTexto}>Mi Facebook</Text>
@@ -114,7 +118,6 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 16,
   },
-  // Estilos de la cabecera llamativa
   heroCard: {
     backgroundColor: '#13436B',
     borderRadius: 20,
@@ -141,6 +144,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
     letterSpacing: 0.5,
+    textAlign: 'center',
   },
   roleBadge: {
     backgroundColor: 'rgba(255, 255, 255, 0.15)',
@@ -159,7 +163,6 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 8,
   },
-  // Estilos de las tarjetas
   card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 16,
@@ -185,7 +188,6 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     color: '#333333',
   },
-  // Etiquetas de habilidades
   skillsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
@@ -212,7 +214,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#111827',
   },
-  // Botones con ícono
   botonesContainer: {
     gap: 10,
     marginTop: 4,
