@@ -1,35 +1,53 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import TarjetaEstudio from "../components/TarjetaEstudio";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Estudios() {
+export default function InicioScreen() {
+  const mostrarAlerta = (titulo: string, mensaje: string) => {
+    Alert.alert(titulo, mensaje, [{ text: 'Cerrar' }]);
+  };
+
   return (
-    <ScrollView style={estilos.contenedor} contentContainerStyle={estilos.contenido}>
-      <Text style={estilos.tituloPrincipal}>Formación Académica</Text>
-      
-      <TarjetaEstudio 
-        titulo="Bachiller" 
-        institucion="Institución Educativa Municipal" 
-        anio={2016} 
-        enCurso={false} 
-      />
-      <TarjetaEstudio 
-        titulo="Técnico" 
-        institucion="Colegio ABC" 
-        anio={2018} 
-        enCurso={false} 
-      />
-      <TarjetaEstudio 
-        titulo="Tecnólogo" 
-        institucion="SENA" 
-        anio={2026} 
-        enCurso={true} 
-      />
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.nombre}>Angel Gaviria</Text>
+      <Text style={styles.rol}>Desarrollador de Software en Formación</Text>
+
+      <View style={styles.botonesContainer}>
+        <TouchableOpacity
+          style={styles.boton}
+          onPress={() => mostrarAlerta('Teléfono', 'Mi número es: +57 300 123 4567')}
+        >
+          <Text style={styles.botonTexto}>Llamar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.boton}
+          onPress={() => mostrarAlerta('Correo Electrónico', 'angel.gaviria@ejemplo.com')}
+        >
+          <Text style={styles.botonTexto}>Enviar Correo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.boton}
+          onPress={() => mostrarAlerta('GitHub', 'github.com/angelgaviriasena22-droid')}
+        >
+          <Text style={styles.botonTexto}>Repositorio Git</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.boton}
+          onPress={() => mostrarAlerta('Facebook', 'facebook.com/angel.gaviria')}
+        >
+          <Text style={styles.botonTexto}>Facebook</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
-const estilos = StyleSheet.create({
-  contenedor: { flex: 1, backgroundColor: "#fafafc" },
-  contenido: { padding: 20 },
-  tituloPrincipal: { fontSize: 20, fontWeight: "bold", marginBottom: 16, color: "#1e293b" }
+const styles = StyleSheet.create({
+  container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
+  nombre: { fontSize: 24, fontWeight: 'bold' },
+  rol: { fontSize: 16, color: '#6B7280', marginBottom: 24 },
+  botonesContainer: { width: '100%', gap: 10 },
+  boton: { backgroundColor: '#2563EB', padding: 14, borderRadius: 10, alignItems: 'center' },
+  botonTexto: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 },
 });
